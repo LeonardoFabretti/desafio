@@ -1,0 +1,568 @@
+@charset "UTF-8";
+
+:root {
+    --fundo-escuro: #000;
+    --fundo-card: #0400ff;
+    --fundo-card-ativo: rgba(255, 255, 255, 0.12);
+    --texto-principal: rgba(255, 255, 255, 0.9);
+    --texto-secundario: rgba(255, 255, 255, 0.6);
+    --texto-escuro: rgba(0, 0, 0, 0.75);
+    --input: #38434F;
+    --cor08: #45a0fa;
+    --cor07: #280b77;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0d1117;
+    color: #fff;
+}
+
+a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+a>span {
+    color: white;
+    text-decoration: none;
+}
+
+/* --- BARRA DE NAVEGAÇÃO --- */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d1117;
+    padding: 10px 20px;
+    color: white;
+    border-bottom: 1px solid #2e2e2e;
+    gap: 30px;
+}
+
+.left,
+.right {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.left {
+    gap: 10px;
+}
+
+.logo {
+    height: 35px;
+}
+
+.search-box {
+    background-color: var(--input);
+    border: none;
+    padding: 9px 10px;
+    color: white;
+    border-radius: 4px;
+    width: 280px;
+}
+
+.search-box::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 12px;
+    font-size: 12px;
+    cursor: pointer;
+    color: var(--texto-principal);
+}
+
+.nav-item img {
+    height: 24px;
+    margin-bottom: 4px;
+    filter: brightness(0) invert(1);
+}
+
+.divider {
+    width: 1px;
+    height: 40px;
+    background-color: #3e3e3e;
+    margin: 0 10px;
+}
+
+/* --- LAYOUT DE 2 COLUNAS --- */
+.layout-principal {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 24px;
+    max-width: 1128px; /* Ajustei a largura para uma melhor visualização */
+    margin: 20px auto;
+    padding: 0 20px;
+    align-items: start;
+}
+
+.coluna-principal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- PERFIL HEADER --- */
+.perfil {
+    background-color: #161b22;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #2c2f33;
+}
+
+.capa {
+    height: 200px;
+    background-image: url('Imagens/download (9).jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.info-principal {
+    display: flex;
+    padding: 20px;
+    padding-top: 0;
+    position: relative;
+}
+
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #161b22;
+    position: absolute;
+    top: -60px;
+    left: 20px;
+}
+
+.dados {
+    margin-top: 70px;
+}
+
+.dados h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.cargo,
+.tags,
+.local,
+.conexoes {
+    margin: 6px 0;
+    font-size: 14px;
+    color: white;
+}
+
+.conexoes {
+    color: var(--cor08);
+}
+
+.botoes {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    background-color: var(--cor07);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+button.mais {
+    background-color: var(--cor08);
+}
+
+/* --- SEÇÕES (Destaques, Atividades, etc) --- */
+.destaques,
+.atividades,
+.sobre,
+.experiencias,
+.secao {
+    background-color: #161b22;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #2c2f33;
+}
+
+.destaques h2,
+.atividades h2,
+.sobre h2,
+.experiencias h2,
+.secao h2 {
+    color: white;
+    font-size: 20px; /* Ajustei o tamanho da fonte dos títulos */
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* --- CORREÇÃO DESTAQUES (SEM ROLAGEM HORIZONTAL) --- */
+.cards-destaques {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem para a linha de baixo */
+    gap: 20px;
+}
+
+.card {
+    background-color: #161b22;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #2c2f33;
+    flex: 1 1 270px; /* Permite que os cards cresçam e encolham, com base de 270px */
+    min-width: 250px; /* Largura mínima para evitar que fiquem muito espremidos */
+}
+
+.card .tipo {
+    color: var(--texto-secundario);
+    margin: 0;
+    font-size: 13px;
+}
+
+.card h3 {
+    margin-top: 5px;
+    font-size: 16px;
+    color: white;
+}
+
+.imagem-post {
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+.reacoes {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--texto-secundario);
+}
+
+.bolinhas {
+    display: flex;
+    gap: 3px;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circle.azul {
+    background-color: #45a0fa;
+}
+
+.circle.verde {
+    background-color: #00c853;
+}
+
+.circle.laranja {
+    background-color: #ff6d00;
+}
+
+.comentarios {
+    margin-left: auto;
+}
+
+/* --- SEÇÃO ATIVIDADES --- */
+/* (Seu CSS de atividades continua o mesmo) */
+.atividades .seguidores {
+    color: #4a90e2;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.atividade {
+    border-top: 1px solid #444;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+.atividade:first-of-type {
+    border-top: none;
+    margin-top: 0;
+}
+.atividade .autor {
+    color: #bbb;
+    margin-bottom: 10px;
+}
+.conteudo {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+.conteudo img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.conteudo .texto {
+    flex: 1;
+    font-size: 14px;
+    color: #ccc;
+}
+.interacoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    color: #aaa;
+}
+.icones {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.icone {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.icone.verde { background-color: #2ecc71; }
+.icone.azul { background-color: #3498db; }
+.icone.laranja { background-color: #e67e22; }
+.icone.amarelo { background-color: #f1c40f; }
+.ver-todas {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- SEÇÃO SOBRE --- */
+.sobre p {
+    text-align: justify;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* --- SEÇÃO EXPERIÊNCIAS --- */
+/* (Seu CSS de experiências continua o mesmo) */
+.empresa {
+    display: flex;
+    gap: 15px;
+}
+.empresa-logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.empresa-cargos {
+    flex-grow: 1;
+}
+.empresa-nome {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.empresa-duracao-total {
+    margin: 2px 0 20px 0;
+    font-size: 14px;
+    color: var(--texto-secundario);
+}
+
+.lista-cargos {
+    list-style: none;
+    padding-left: 10px;
+    position: relative;
+    margin: 0;
+}
+.lista-cargos::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background-color: #333;
+}
+.cargo-item {
+    position: relative;
+    padding-left: 25px;
+    padding-bottom: 20px;
+}
+.cargo-item:last-child {
+    padding-bottom: 0;
+}
+.cargo-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 10px;
+    height: 9px;
+    background-color: #888;
+    border-radius: 50%;
+}
+.cargo-item h4,
+.cargo-item p {
+    margin: 0;
+    line-height: 1.4;
+}
+.cargo-titulo {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--texto-principal);
+}
+.cargo-subtitulo {
+    font-size: 14px;
+    color: var(--texto-principal);
+}
+.cargo-duracao,
+.cargo-local {
+    font-size: 14px;
+    color: var(--texto-secundario);
+}
+
+/* --- SEÇÕES DE FORMAÇÃO E IDIOMAS (COM CORREÇÃO DO TAMANHO DA IMAGEM) --- */
+.item-academico {
+    display: flex;
+    align-items: center;
+}
+.item-academico img {
+    width: 60px; /* Largura correta da imagem */
+    height: 60px; /* Altura correta da imagem */
+    border-radius: 4px;
+    margin-right: 15px;
+}
+.info-academica h3,
+.info-academica p {
+    margin: 0;
+}
+.info-academica p {
+    color: #b3b3b3;
+}
+.item-idioma h3,
+.item-idioma p {
+    margin: 5px 0;
+}
+.item-idioma p {
+    color: #b3b3b3;
+}
+hr {
+    border: none;
+    border-top: 2px solid #444;
+    margin: 15px 0;
+}
+
+
+/* --- NOVOS ESTILOS DA BARRA LATERAL DE SUGESTÕES --- */
+.coluna-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.sugestoes-container {
+    background-color: #161b22;
+    border: 1px solid #2c2f33;
+    border-radius: 12px;
+    padding: 20px;
+}
+.titulo-secao {
+    font-size: 16px;
+    font-weight: bold;
+    color: #f0f6fc;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+.lista-perfis {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.perfil-item {
+    display: flex;
+    align-items: flex-start;
+}
+.perfil-foto-sugestao {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 16px;
+}
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+}
+.perfil-nome {
+    font-size: 14px;
+    font-weight: bold;
+    color: #f0f6fc;
+    margin: 0 0 4px 0;
+}
+.perfil-descricao {
+    font-size: 12px;
+    color: #8b949e;
+    margin: 0 0 12px 0;
+    line-height: 1.4;
+}
+.botao-acao {
+    background-color: transparent; /* Mudei para ficar igual a imagem de referência */
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    padding: 6px 11px;
+    border-radius: 999px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.botao-acao:hover {
+    background-color: #30363d;
+    border-color: #8b949e;
+}
+
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 1024px) {
+    .layout-principal {
+        grid-template-columns: 1fr; /* Em telas menores, as colunas viram uma só */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .layout-principal {
+        padding: 0 10px;
+    }
+    .info-principal {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .foto-perfil {
+        position: static;
+        width: 100px;
+        height: 100px;
+        margin: 20px auto 10px;
+        border: 3px solid #161b22;
+        top: 0;
+    }
+    .dados {
+        margin-top: 10px;
+    }
+    .botoes {
+        justify-content: center;
+    }
+}
